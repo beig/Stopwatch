@@ -1,4 +1,4 @@
-A simple Stopwatch program which continuous reads the console.log and starts a Stopwatch.
+A simple Stopwatch program which continuously reads the console.log and starts a Stopwatch.
 
 You have to press a key in-game to start the Stopwatch.
 It automatically resets after 45 seconds.
