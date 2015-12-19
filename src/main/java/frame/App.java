@@ -96,6 +96,8 @@ public class App {
     public void listen(ScannerEvent event) {
         if (event.getMessage() == 1 && !startup) {
             frame.stopWatch.start();
+        } else if (event.getMessage() == 2 && !startup) {
+            frame.stopWatch.reset();
         }
     }
 

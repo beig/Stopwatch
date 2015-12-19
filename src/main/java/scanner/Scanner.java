@@ -38,6 +38,8 @@ public class Scanner extends Thread {
         public void handle(String line) {
             if (line.startsWith("START BOMB TIMER")) {
                 eventBus.post(new ScannerEvent(1));
+            } else if (line.startsWith("RESET BOMB TIMER")) {
+                eventBus.post(new ScannerEvent(2));
             }
         }
     }
