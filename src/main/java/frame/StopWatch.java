@@ -15,9 +15,11 @@ public class StopWatch extends JPanel {
     private double clockTime;
     private String clockTimeString;
 
+    private int DEFAULT_CLOCK_TIMER = 400;
+
     public StopWatch() {
 
-        clockTick = 0;
+        clockTick = DEFAULT_CLOCK_TIMER;
         clockTime = ((double) clockTick) / 10.0;
 
         clockTimeString = Double.toString(clockTime);
@@ -30,11 +32,11 @@ public class StopWatch extends JPanel {
 
         timer = new Timer(TENTH_SEC, new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                clockTick++;
+                clockTick--;
                 clockTime = ((double) clockTick) / 10.0;
                 clockTimeString = Double.toString(clockTime);
                 timeLbl.setText(clockTimeString);
-                if (clockTimeString.equalsIgnoreCase("45.0")) {
+                if (clockTimeString.equalsIgnoreCase("0.0")) {
                     reset();
                 }
             }
@@ -62,10 +64,20 @@ public class StopWatch extends JPanel {
     public void reset() {
         timer.stop();
 
-        clockTick = 0;
+        clockTick = DEFAULT_CLOCK_TIMER;
         clockTime = ((double) clockTick) / 10.0;
         clockTimeString = Double.toString(clockTime);
         timeLbl.setText(clockTimeString);
+    }
+
+    public void toggleTimer() {
+        if (DEFAULT_CLOCK_TIMER == 400) {
+            DEFAULT_CLOCK_TIMER = 350;
+        } else {
+            DEFAULT_CLOCK_TIMER = 400;
+        }
+
+        reset();
     }
 }
 

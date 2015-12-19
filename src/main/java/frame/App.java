@@ -98,6 +98,8 @@ public class App {
             frame.stopWatch.start();
         } else if (event.getMessage() == 2 && !startup) {
             frame.stopWatch.reset();
+        } else if (event.getMessage() == 3 && !startup) {
+            frame.stopWatch.toggleTimer();
         }
     }
 

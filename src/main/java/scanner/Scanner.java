@@ -40,6 +40,8 @@ public class Scanner extends Thread {
                 eventBus.post(new ScannerEvent(1));
             } else if (line.startsWith("RESET BOMB TIMER")) {
                 eventBus.post(new ScannerEvent(2));
+            } else if (line.startsWith("TOGGLE BOMB TIMER")) {
+                eventBus.post(new ScannerEvent(3));
             }
         }
     }
